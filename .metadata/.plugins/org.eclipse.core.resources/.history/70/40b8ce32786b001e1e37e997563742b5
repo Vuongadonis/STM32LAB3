@@ -17,7 +17,7 @@ void mode1() {
 	case 0:
 		led_status_1 = 1;
 		led7buffer[0] = red_timer/10;
-		led7buffer[1] = red_timer%10;
+		led7buffer[1] = red_timer%10 + 1;
 		setTimer1(red_timer*1000);
 		setTime_counter_7seg(1000);
 		break;
@@ -29,9 +29,8 @@ void mode1() {
 		if( flag1 == 1 ) {
 			led_status_1 = 2;
 			led7buffer[0] = green_timer/10;
-			led7buffer[1] = green_timer%10;
+			led7buffer[1] = green_timer%10 + 1;
 			setTimer1(green_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	case 2:
@@ -42,9 +41,8 @@ void mode1() {
 		if( flag1 == 1 ) {
 			led_status_1 = 3;
 			led7buffer[0] = yellow_timer/10;
-			led7buffer[1] = yellow_timer%10;
+			led7buffer[1] = yellow_timer%10 + 1;
 			setTimer1(yellow_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	case 3:
@@ -55,9 +53,8 @@ void mode1() {
 		if( flag1 == 1 ) {
 			led_status_1 = 1;
 			led7buffer[0] = red_timer/10;
-			led7buffer[1] = red_timer%10;
+			led7buffer[1] = red_timer%10 + 1;
 			setTimer1(red_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	default:
@@ -68,7 +65,7 @@ void mode1() {
 	case 0:
 		led_status_2 = 2;
 		led7buffer[2] = green_timer/10;
-		led7buffer[3] = green_timer%10;
+		led7buffer[3] = green_timer%10 + 1;
 		setTimer3(green_timer*1000);
 		setTime_counter_7seg(1000);
 		break;
@@ -80,9 +77,8 @@ void mode1() {
 		if( flag3 == 1 ) {
 			led_status_2 = 2;
 			led7buffer[2] = green_timer/10;
-			led7buffer[3] = green_timer%10;
+			led7buffer[3] = green_timer%10 + 1;
 			setTimer3(green_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	case 2:
@@ -93,9 +89,8 @@ void mode1() {
 		if( flag3 == 1 ) {
 			led_status_2 = 3;
 			led7buffer[2] = yellow_timer/10;
-			led7buffer[3] = yellow_timer%10;
+			led7buffer[3] = yellow_timer%10 + 1;
 			setTimer3(yellow_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	case 3:
@@ -106,9 +101,8 @@ void mode1() {
 		if( flag3 == 1 ) {
 			led_status_2 = 1;
 			led7buffer[2] = red_timer/10;
-			led7buffer[3] = red_timer%10;
+			led7buffer[3] = red_timer%10 + 1;
 			setTimer3(red_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	default:

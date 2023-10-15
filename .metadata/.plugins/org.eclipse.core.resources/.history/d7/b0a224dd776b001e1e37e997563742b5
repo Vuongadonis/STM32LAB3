@@ -31,7 +31,6 @@ void mode1() {
 			led7buffer[0] = green_timer/10;
 			led7buffer[1] = green_timer%10;
 			setTimer1(green_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	case 2:
@@ -44,7 +43,6 @@ void mode1() {
 			led7buffer[0] = yellow_timer/10;
 			led7buffer[1] = yellow_timer%10;
 			setTimer1(yellow_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	case 3:
@@ -57,7 +55,6 @@ void mode1() {
 			led7buffer[0] = red_timer/10;
 			led7buffer[1] = red_timer%10;
 			setTimer1(red_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	default:
@@ -82,7 +79,6 @@ void mode1() {
 			led7buffer[2] = green_timer/10;
 			led7buffer[3] = green_timer%10;
 			setTimer3(green_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	case 2:
@@ -95,7 +91,6 @@ void mode1() {
 			led7buffer[2] = yellow_timer/10;
 			led7buffer[3] = yellow_timer%10;
 			setTimer3(yellow_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	case 3:
@@ -108,7 +103,6 @@ void mode1() {
 			led7buffer[2] = red_timer/10;
 			led7buffer[3] = red_timer%10;
 			setTimer3(red_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	default:

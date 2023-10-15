@@ -16,10 +16,8 @@ void mode1() {
 	switch( led_status_1 ) {
 	case 0:
 		led_status_1 = 1;
-		led7buffer[0] = red_timer/10;
-		led7buffer[1] = red_timer%10;
+		led7buffer[1] = 5;
 		setTimer1(red_timer*1000);
-		setTime_counter_7seg(1000);
 		break;
 	case 1:
 		HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, RESET);
@@ -28,10 +26,8 @@ void mode1() {
 
 		if( flag1 == 1 ) {
 			led_status_1 = 2;
-			led7buffer[0] = green_timer/10;
-			led7buffer[1] = green_timer%10;
+			led7buffer[1] = 3;
 			setTimer1(green_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	case 2:
@@ -41,10 +37,8 @@ void mode1() {
 
 		if( flag1 == 1 ) {
 			led_status_1 = 3;
-			led7buffer[0] = yellow_timer/10;
-			led7buffer[1] = yellow_timer%10;
+			led7buffer[1] = 2;
 			setTimer1(yellow_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	case 3:
@@ -54,10 +48,8 @@ void mode1() {
 
 		if( flag1 == 1 ) {
 			led_status_1 = 1;
-			led7buffer[0] = red_timer/10;
-			led7buffer[1] = red_timer%10;
+			led7buffer[1] = 5;
 			setTimer1(red_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	default:
@@ -67,10 +59,8 @@ void mode1() {
 	switch( led_status_2 ) {
 	case 0:
 		led_status_2 = 2;
-		led7buffer[2] = green_timer/10;
-		led7buffer[3] = green_timer%10;
+		led7buffer[0] = 3;
 		setTimer3(green_timer*1000);
-		setTime_counter_7seg(1000);
 		break;
 	case 1:
 		HAL_GPIO_WritePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin, RESET);
@@ -79,10 +69,8 @@ void mode1() {
 
 		if( flag3 == 1 ) {
 			led_status_2 = 2;
-			led7buffer[2] = green_timer/10;
-			led7buffer[3] = green_timer%10;
+			led7buffer[0] = 3;
 			setTimer3(green_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	case 2:
@@ -92,10 +80,8 @@ void mode1() {
 
 		if( flag3 == 1 ) {
 			led_status_2 = 3;
-			led7buffer[2] = yellow_timer/10;
-			led7buffer[3] = yellow_timer%10;
+			led7buffer[0] = 2;
 			setTimer3(yellow_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	case 3:
@@ -105,31 +91,21 @@ void mode1() {
 
 		if( flag3 == 1 ) {
 			led_status_2 = 1;
-			led7buffer[2] = red_timer/10;
-			led7buffer[3] = red_timer%10;
+			led7buffer[0] = 5;
 			setTimer3(red_timer*1000);
-			setTime_counter_7seg(1000);
 		}
 		break;
 	default:
 		break;
 	}
 	if( flag_7seg == 1) {
+		led7buffer[0]--;
 		led7buffer[1]--;
-		led7buffer[3]--;
-		if( led7buffer[1] < 0 ) {
-			led7buffer[0]--;
-			led7buffer[1] = 9;
-			if( led7buffer[0] < 0 ) {
-				led7buffer[0] = 0;
-			}
+		if(led7buffer[0] < 0) {
+			led7buffer[0] = 5;
 		}
-		if( led7buffer[3] < 0 ) {
-			led7buffer[2]--;
-			led7buffer[3] = 9;
-			if( led7buffer[2] < 0 ) {
-				led7buffer[2] = 0;
-			}
+		if(led7buffer[1] < 0) {
+			led7buffer[1] = 6;
 		}
 		setTime_counter_7seg(1000);
 	}
@@ -210,12 +186,12 @@ void fsmButton() {
 		break;
 	case 1:
 		mode1();
-//		led7buffer[2] = 0;
-//		led7buffer[3] = 1;
+		led7buffer[2] = 0;
+		led7buffer[3] = 1;
 		if( isButton1Pressed() == 1 ) {
 			traffic_status = 2;
-//			led_status_1 = OUT;
-//			led_status_2 = OUT;
+			led_status_1 = OUT;
+			led_status_2 = OUT;
 		}
 		break;
 	case 2:
@@ -227,8 +203,8 @@ void fsmButton() {
 		if( isButton1Pressed() == 1 ) {
 			red_timer_mode = red_timer;
 			traffic_status = 3;
-//			led_status_1 = OUT;
-//			led_status_2 = OUT;
+			led_status_1 = OUT;
+			led_status_2 = OUT;
 		}
 		break;
 	case 3:
@@ -240,8 +216,8 @@ void fsmButton() {
 		if( isButton1Pressed() == 1 ) {
 			green_timer_mode = green_timer;
 			traffic_status = 4;
-//			led_status_1 = OUT;
-//			led_status_2 = OUT;
+			led_status_1 = OUT;
+			led_status_2 = OUT;
 		}
 		break;
 	case 4:

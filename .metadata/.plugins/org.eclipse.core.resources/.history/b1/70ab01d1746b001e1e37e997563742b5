@@ -8,8 +8,7 @@
 #ifndef INC_GLOBAL_H_
 #define INC_GLOBAL_H_
 
-extern int led_status_1;
-extern int led_status_2;
+extern int led_status;
 extern int traffic_status;
 extern int led7seg_status;
 extern int led7buffer[4];

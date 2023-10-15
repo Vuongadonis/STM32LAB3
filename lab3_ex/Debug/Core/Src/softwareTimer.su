@@ -1,7 +1,8 @@
-../Core/Src/softwareTimer.c:28:6:setCycle	16	static
-../Core/Src/softwareTimer.c:32:6:setTimer0	16	static
-../Core/Src/softwareTimer.c:36:6:setTimer1	16	static
-../Core/Src/softwareTimer.c:40:6:setTimer2	16	static
-../Core/Src/softwareTimer.c:44:6:setTime_counter_7seg	16	static
-../Core/Src/softwareTimer.c:48:6:setTimerBlinkMode	16	static
-../Core/Src/softwareTimer.c:53:6:timerRun	4	static
+../Core/Src/softwareTimer.c:31:6:setCycle	16	static
+../Core/Src/softwareTimer.c:35:6:setTimer0	16	static
+../Core/Src/softwareTimer.c:39:6:setTimer1	16	static
+../Core/Src/softwareTimer.c:43:6:setTimer2	16	static
+../Core/Src/softwareTimer.c:47:6:setTimer3	16	static
+../Core/Src/softwareTimer.c:51:6:setTime_counter_7seg	16	static
+../Core/Src/softwareTimer.c:55:6:setTimerBlinkMode	16	static
+../Core/Src/softwareTimer.c:60:6:timerRun	4	static

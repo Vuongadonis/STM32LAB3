@@ -17,9 +17,6 @@ int flag1 = 0;
 int timerCounter2 = 0;
 int flag2 = 0;
 
-int timerCounter3 = 0;
-int flag3 = 0;
-
 int time_counter_7seg = 0;
 int flag_7seg = 0;
 
@@ -43,10 +40,6 @@ void setTimer1(int duration) {
 void setTimer2(int duration) {
 	timerCounter2 = duration/cycle;
 	flag2 = 0;
-}
-void setTimer3(int duration) {
-	timerCounter3 = duration/cycle;
-	flag3 = 0;
 }
 void setTime_counter_7seg(int duration) {
 	time_counter_7seg = duration/cycle;
@@ -74,12 +67,6 @@ void timerRun() {
 		timerCounter2--;
 		if(timerCounter2 <= 0) {
 			flag2 = 1;
-		}
-	}
-	if(timerCounter3 > 0) {
-		timerCounter3--;
-		if(timerCounter3 <= 0) {
-			flag3 = 1;
 		}
 	}
 	if( time_counter_7seg > 0 ) {

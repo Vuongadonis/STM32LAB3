@@ -8,8 +8,7 @@
 
 #include "global.h"
 
-int led_status_1 = 0;
-int led_status_2 = 0;
+int led_status = 0;
 int traffic_status = 0;
 int led7seg_status = 1;
 int led7buffer[4] = {0, 0, 0, 0};

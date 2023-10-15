@@ -1,5 +1,5 @@
-fsm.c:14:6:mode1	14
-fsm.c:94:6:mode2	5
-fsm.c:116:6:mode3	5
-fsm.c:138:6:mode4	5
-fsm.c:160:6:fsmButton	10
+fsm.c:14:6:mode1	20
+fsm.c:139:6:mode2	5
+fsm.c:161:6:mode3	5
+fsm.c:183:6:mode4	5
+fsm.c:205:6:fsmButton	10
