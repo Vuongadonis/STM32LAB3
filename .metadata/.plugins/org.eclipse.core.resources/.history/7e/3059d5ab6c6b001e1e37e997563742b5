@@ -1,0 +1,18 @@
+/*
+ * global.h
+ *
+ *  Created on: Oct 11, 2023
+ *      Author: Acer
+ */
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+
+extern int led_status;
+extern int traffic_status;
+extern int led7seg_status;
+extern int led7buffer[4];
+extern int OUT;
+extern int blink_state;
+
+#endif /* INC_GLOBAL_H_ */

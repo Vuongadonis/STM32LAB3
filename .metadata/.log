@@ -1,0 +1,78 @@
+!SESSION 2023-10-10 16:06:15.278 -----------------------------------------------
+eclipse.buildId=Version 1.12.1
+java.version=11.0.17
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-10-10 16:06:48.721
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-10-10 16:06:48.745
+!MESSAGE Log4j2 initialized with config file C:\Users\Acer\Desktop\DHBK\HK5\VXL\STM32\lab\lab_3\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-10-10 16:07:01.460
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-10-10 16:09:58.848
+!MESSAGE Indexed 'lab3_ex' (17 sources, 78 headers) in 6.89 sec: 3,631 declarations; 13,137 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)
+!SESSION 2023-10-10 16:29:01.146 -----------------------------------------------
+eclipse.buildId=Version 1.12.1
+java.version=11.0.17
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-10-10 16:29:11.458
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-10-10 16:29:11.461
+!MESSAGE Log4j2 initialized with config file C:\Users\Acer\Desktop\DHBK\HK5\VXL\STM32\lab\lab_3\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-10-10 16:29:27.190
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-10-11 16:02:09.358 -----------------------------------------------
+eclipse.buildId=Version 1.12.1
+java.version=11.0.17
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-10-11 16:02:36.367
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-10-11 16:02:36.378
+!MESSAGE Log4j2 initialized with config file C:\Users\Acer\Desktop\DHBK\HK5\VXL\STM32\lab\lab_3\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-10-11 16:02:50.799
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-10-12 15:17:12.884 -----------------------------------------------
+eclipse.buildId=Version 1.12.1
+java.version=11.0.17
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-10-12 15:17:37.555
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-10-12 15:17:37.568
+!MESSAGE Log4j2 initialized with config file C:\Users\Acer\Desktop\DHBK\HK5\VXL\STM32\lab\lab_3\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-10-12 15:17:51.227
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-10-15 22:05:35.951 -----------------------------------------------
+eclipse.buildId=Version 1.12.1
+java.version=11.0.17
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-10-15 22:06:11.274
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-10-15 22:06:11.285
+!MESSAGE Log4j2 initialized with config file C:\Users\Acer\Desktop\DHBK\HK5\VXL\STM32\lab\lab_3\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-10-15 22:06:27.269
+!MESSAGE Started RMI Server, listening on port 41337

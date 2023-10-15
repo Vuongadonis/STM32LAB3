@@ -1,0 +1,9 @@
+button.c:21:5:isButton1Pressed	2
+button.c:29:5:isButton2Pressed	2
+button.c:37:5:isButton3Pressed	2
+button.c:45:5:isButton1LongPressed	2
+button.c:53:5:isButton2LongPressed	2
+button.c:61:5:isButton3LongPressed	2
+button.c:74:6:getKeyInput1	5
+button.c:98:6:getKeyInput2	5
+button.c:122:6:getKeyInput3	5

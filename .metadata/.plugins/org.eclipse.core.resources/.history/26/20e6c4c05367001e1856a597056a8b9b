@@ -1,0 +1,32 @@
+/*
+ * softwareTimer.c
+ *
+ *  Created on: Oct 10, 2023
+ *      Author: Acer
+ */
+
+
+#include "softwareTimer.h"
+
+int timerCounter0 = 0;
+int flag0 = 0;
+int cycle = 10;
+
+void setCycle(int userCycle) {
+	cycle = userCycle;
+}
+
+void setTimer0(int duration) {
+	timerCounter0 = duration/cycle;
+	flag0 = 0;
+}
+
+void timerRun() {
+	if(timerCounter0 > 0) {
+		timerCounter0--;
+		if(timerCounter0 < 0) {
+			flag0 = 1;
+		}
+	}
+}
+

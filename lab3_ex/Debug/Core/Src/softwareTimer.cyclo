@@ -1,0 +1,7 @@
+softwareTimer.c:28:6:setCycle	1
+softwareTimer.c:32:6:setTimer0	1
+softwareTimer.c:36:6:setTimer1	1
+softwareTimer.c:40:6:setTimer2	1
+softwareTimer.c:44:6:setTime_counter_7seg	1
+softwareTimer.c:48:6:setTimerBlinkMode	1
+softwareTimer.c:53:6:timerRun	11

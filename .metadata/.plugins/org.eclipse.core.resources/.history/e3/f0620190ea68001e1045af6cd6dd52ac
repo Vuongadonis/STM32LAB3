@@ -1,0 +1,24 @@
+/*
+ * softwareTimer.h
+ *
+ *  Created on: Oct 10, 2023
+ *      Author: Acer
+ */
+
+#ifndef INC_SOFTWARETIMER_H_
+#define INC_SOFTWARETIMER_H_
+
+extern int flag0;
+extern int flag1;
+extern int flag2;
+extern int flag_7seg;
+
+void setCycle(int userCycle);
+void setTimer0(int duration);
+void setTimer1(int duration);
+void setTimer2(int duration);
+void setTime_counter_7seg (int duration);
+
+void timerRun();
+
+#endif /* INC_SOFTWARETIMER_H_ */

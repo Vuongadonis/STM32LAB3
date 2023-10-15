@@ -1,0 +1,129 @@
+/*
+ * fsm.c
+ *
+ *  Created on: Oct 10, 2023
+ *      Author: Acer
+ */
+
+
+#include "fsm.h"
+#include "main.h"
+#include "softwareTimer.h"
+#include "global.h"
+
+void mode1() {
+	switch( led_status ) {
+	case 1:
+		HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, RESET);
+		HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, SET);
+		HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, SET);
+		HAL_GPIO_WritePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin, SET);
+		HAL_GPIO_WritePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin, RESET);
+		HAL_GPIO_WritePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin, SET);
+		if( flag1 == 1 ) {
+			led_status == 2;
+			setTimer1(3000);
+		}
+		break;
+	case 2:
+		HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, RESET);
+		HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, SET);
+		HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, SET);
+		HAL_GPIO_WritePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin, SET);
+		HAL_GPIO_WritePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin, SET);
+		HAL_GPIO_WritePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin, RESET);
+		if( flag1 == 1 ) {
+			led_status == 3;
+			setTimer1(2000);
+		}
+		break;
+	case 3:
+		HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, SET);
+		HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, RESET);
+		HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, SET);
+		HAL_GPIO_WritePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin, RESET);
+		HAL_GPIO_WritePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin, SET);
+		HAL_GPIO_WritePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin, SET);
+		if( flag1 == 1 ) {
+			led_status == 4;
+			setTimer1(3000);
+		}
+		break;
+	case 4:
+		HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, SET);
+		HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, SET);
+		HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, RESET);
+		HAL_GPIO_WritePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin, RESET);
+		HAL_GPIO_WritePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin, SET);
+		HAL_GPIO_WritePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin, SET);
+		if( flag1 == 1 ) {
+			led_status == 1;
+			setTimer1(2000);
+		}
+		break;
+	default:
+		break;
+	}
+}
+
+void mode2() {
+
+}
+
+void mode3() {
+
+}
+
+void mode4() {
+
+}
+
+void fsmTraffic(int status) {
+	switch( status ) {
+	case 1:
+		mode1();
+		break;
+	case 2:
+		mode2();
+		break;
+	case 3:
+		mode3();
+		break;
+	case 4:
+		mode4();
+		break;
+	default:
+		break;
+	}
+}
+
+void fsmButton() {
+	switch( traffic_status ) {
+	case 1:
+		fsmTraffic(traffic_status);
+		if( isButton1Pressed() == 1 ) {
+			traffic_status = 2;
+		}
+		break;
+	case 2:
+		fsmTraffic(traffic_status);
+		if( isButton1Pressed() == 1 ) {
+			traffic_status = 3;
+		}
+		break;
+	case 3:
+		fsmTraffic(traffic_status);
+		if( isButton1Pressed() == 1 ) {
+			traffic_status = 4;
+		}
+		break;
+	case 4:
+		fsmTraffic(traffic_status);
+		if( isButton1Pressed() == 1 ) {
+			traffic_status = 1;
+		}
+		break;
+	default:
+		break;
+	}
+}

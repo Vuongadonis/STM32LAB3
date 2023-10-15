@@ -1,0 +1,45 @@
+/*
+ * fsm.c
+ *
+ *  Created on: Oct 10, 2023
+ *      Author: Acer
+ */
+
+
+#include "fsm.h"
+#include "main.h"
+
+void mode1() {
+
+}
+
+void mode2() {
+
+}
+
+void mode3() {
+
+}
+
+void mode4() {
+
+}
+
+void fsmTraffic(int status) {
+	switch( status ) {
+	case 1:
+		mode1();
+		break;
+	case 2:
+		mode2();
+		break;
+	case 3:
+		mode3();
+		break;
+	case 4:
+		mode4();
+		break;
+	default:
+		break;
+	}
+}
