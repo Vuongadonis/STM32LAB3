@@ -11,6 +11,14 @@
 #include "softwareTimer.h"
 #include "global.h"
 
+/*
+ * Hàm này sẽ sử dụng 2 biến led_status_1 và led_status_2
+ * để điều khiển 2 đèn giao thông của hệ thống
+ * với khởi tạo led_status_1 sẽ là đèn đỏ
+ * led_status_2 sẽ là đèn xanh
+ * Đồng thời bắt flag_7seg để giảm giá trị led 7 đoạn đi 1
+ */
+
 void mode1() {
 	//LED_TRAFFIC_1
 	switch( led_status_1 ) {
@@ -128,6 +136,12 @@ void mode1() {
 
 }
 
+/*
+ * Hàm này mô tả mode 2 của hệ thống
+ * với mode 2, đèn đỏ của cả 2 đèn giao thông sẽ nhấp nháy với tần số 2 Hz
+ * Khi button2 được nhấn sẽ tăng biến tạm red_timer_mode lên 1
+ * khi button3 được nhấn sẽ gán giá trị từ biến tạm red_timer_mode vào biến red_timer
+ */
 void mode2() {
 	if( flagBlinkMode == 1 ) {
 		HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, blink_state);
@@ -150,6 +164,12 @@ void mode2() {
 	}
 }
 
+/*
+ * Hàm này mô tả mode 3 của hệ thống
+ * với mode 3, đèn xanh của cả 2 đèn giao thông sẽ nhấp nháy với tần số 2 Hz
+ * Khi button2 được nhấn sẽ tăng biến tạm green_timer_mode lên 1
+ * khi button3 được nhấn sẽ gán giá trị từ biến tạm green_timer_mode vào biến green_timer
+ */
 void mode3() {
 	if( flagBlinkMode == 1 ) {
 		HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, blink_state);
@@ -172,6 +192,12 @@ void mode3() {
 	}
 }
 
+/*
+ * Hàm này mô tả mode 4 của hệ thống
+ * với mode 2, đèn vàng của cả 2 đèn giao thông sẽ nhấp nháy với tần số 2 Hz
+ * Khi button2 được nhấn sẽ tăng biến tạm red_timer_mode lên 1
+ * khi button3 được nhấn sẽ gán giá trị từ biến tạm red_timer_mode vào biến red_timer
+ */
 void mode4() {
 	if( flagBlinkMode == 1 ) {
 		HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, blink_state);
@@ -194,6 +220,12 @@ void mode4() {
 	}
 }
 
+/*
+ * Hàm này mô tả máy trạng thái mỗi khi button1 được nhấn
+ * ở case1, 2, 3, 4 tương ứng mode 1, 2, 3, 4 của các trạng thái
+ * khi chuyển qua case1, cần cho 2 biến led_status_1 và led_status_2 bằng 0 để bắt đầu mode1
+ * khi chuyển qua case2, 3, 4 thì cần gán giá trị cho led7buffer[] để led 7 đoạn hiển thị
+ */
 void fsmButton() {
 	switch( traffic_status ) {
 	case 0:

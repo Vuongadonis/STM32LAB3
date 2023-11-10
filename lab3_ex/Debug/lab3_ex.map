@@ -739,6 +739,21 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x140 ./Core/Src/system_stm32f1xx.o
  .debug_macro   0x0000000000000000      0x8ed ./Core/Src/system_stm32f1xx.o
  .debug_macro   0x0000000000000000       0x69 ./Core/Src/system_stm32f1xx.o
+ .group         0x0000000000000000        0xc ./Core/Src/test.o
+ .text          0x0000000000000000        0x0 ./Core/Src/test.o
+ .data          0x0000000000000000        0x0 ./Core/Src/test.o
+ .bss           0x0000000000000000        0x0 ./Core/Src/test.o
+ .debug_info    0x0000000000000000       0x21 ./Core/Src/test.o
+ .debug_abbrev  0x0000000000000000       0x13 ./Core/Src/test.o
+ .debug_aranges
+                0x0000000000000000       0x18 ./Core/Src/test.o
+ .debug_macro   0x0000000000000000       0x11 ./Core/Src/test.o
+ .debug_macro   0x0000000000000000      0xa6c ./Core/Src/test.o
+ .debug_line    0x0000000000000000       0x33 ./Core/Src/test.o
+ .debug_str     0x0000000000000000     0x2cb1 ./Core/Src/test.o
+ .comment       0x0000000000000000       0x51 ./Core/Src/test.o
+ .ARM.attributes
+                0x0000000000000000       0x2d ./Core/Src/test.o
  .text          0x0000000000000000       0x14 ./Core/Startup/startup_stm32f103c6tx.o
  .data          0x0000000000000000        0x0 ./Core/Startup/startup_stm32f103c6tx.o
  .bss           0x0000000000000000        0x0 ./Core/Startup/startup_stm32f103c6tx.o
@@ -2397,6 +2412,7 @@ LOAD ./Core/Src/stm32f1xx_it.o
 LOAD ./Core/Src/syscalls.o
 LOAD ./Core/Src/sysmem.o
 LOAD ./Core/Src/system_stm32f1xx.o
+LOAD ./Core/Src/test.o
 LOAD ./Core/Startup/startup_stm32f103c6tx.o
 LOAD ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
 LOAD ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o

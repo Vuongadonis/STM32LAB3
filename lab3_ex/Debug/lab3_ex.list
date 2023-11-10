@@ -1176,10 +1176,10 @@ void fsmled7seg() {
  80008b8:	2000010c 	.word	0x2000010c
 
 080008bc <mode1>:
-#include "fsm.h"
-#include "main.h"
-#include "softwareTimer.h"
-#include "global.h"
+ * với khởi tạo led_status_1 sẽ là đèn đỏ
+ * led_status_2 sẽ là đèn xanh
+ * Đồng thời bắt flag_7seg để giảm giá trị led 7 đoạn đi 1
+ */
 
 void mode1() {
  80008bc:	b580      	push	{r7, lr}
@@ -1234,7 +1234,6 @@ void mode1() {
  8000922:	fb02 f303 	mul.w	r3, r2, r3
  8000926:	4618      	mov	r0, r3
  8000928:	f000 fdd8 	bl	80014dc <setTimer1>
-//		setTime_counter_7seg(1000);
 		break;
  800092c:	e0be      	b.n	8000aac <mode1+0x1f0>
 	case 1:
@@ -1296,7 +1295,6 @@ void mode1() {
  800099e:	fb02 f303 	mul.w	r3, r2, r3
  80009a2:	4618      	mov	r0, r3
  80009a4:	f000 fd9a 	bl	80014dc <setTimer1>
-//			setTime_counter_7seg(1000);
 		}
 		break;
  80009a8:	e07b      	b.n	8000aa2 <mode1+0x1e6>
@@ -1359,7 +1357,6 @@ void mode1() {
  8000a18:	fb02 f303 	mul.w	r3, r2, r3
  8000a1c:	4618      	mov	r0, r3
  8000a1e:	f000 fd5d 	bl	80014dc <setTimer1>
-//			setTime_counter_7seg(1000);
 		}
 		break;
  8000a22:	e040      	b.n	8000aa6 <mode1+0x1ea>
@@ -1422,7 +1419,6 @@ void mode1() {
  8000a92:	fb02 f303 	mul.w	r3, r2, r3
  8000a96:	4618      	mov	r0, r3
  8000a98:	f000 fd20 	bl	80014dc <setTimer1>
-//			setTime_counter_7seg(1000);
 		}
 		break;
  8000a9c:	e005      	b.n	8000aaa <mode1+0x1ee>
@@ -1489,7 +1485,6 @@ void mode1() {
  8000b0e:	fb02 f303 	mul.w	r3, r2, r3
  8000b12:	4618      	mov	r0, r3
  8000b14:	f000 fd16 	bl	8001544 <setTimer3>
-//		setTime_counter_7seg(1000);
 		break;
  8000b18:	e0d3      	b.n	8000cc2 <mode1+0x406>
 	case 1:
@@ -1551,7 +1546,6 @@ void mode1() {
  8000b8a:	fb02 f303 	mul.w	r3, r2, r3
  8000b8e:	4618      	mov	r0, r3
  8000b90:	f000 fcd8 	bl	8001544 <setTimer3>
-//			setTime_counter_7seg(1000);
 		}
 		break;
  8000b94:	e090      	b.n	8000cb8 <mode1+0x3fc>
@@ -1625,7 +1619,6 @@ void mode1() {
  8000c2e:	fb02 f303 	mul.w	r3, r2, r3
  8000c32:	4618      	mov	r0, r3
  8000c34:	f000 fc86 	bl	8001544 <setTimer3>
-//			setTime_counter_7seg(1000);
 		}
 		break;
  8000c38:	e040      	b.n	8000cbc <mode1+0x400>
@@ -1688,7 +1681,6 @@ void mode1() {
  8000ca8:	fb02 f303 	mul.w	r3, r2, r3
  8000cac:	4618      	mov	r0, r3
  8000cae:	f000 fc49 	bl	8001544 <setTimer3>
-//			setTime_counter_7seg(1000);
 		}
 		break;
  8000cb2:	e005      	b.n	8000cc0 <mode1+0x404>
@@ -1793,7 +1785,11 @@ void mode1() {
  8000d54:	2000011c 	.word	0x2000011c
 
 08000d58 <mode2>:
-
+ * Hàm này mô tả mode 2 của hệ thống
+ * với mode 2, đèn đỏ của cả 2 đèn giao thông sẽ nhấp nháy với tần số 2 Hz
+ * Khi button2 được nhấn sẽ tăng biến tạm red_timer_mode lên 1
+ * khi button3 được nhấn sẽ gán giá trị từ biến tạm red_timer_mode vào biến red_timer
+ */
 void mode2() {
  8000d58:	b580      	push	{r7, lr}
  8000d5a:	af00      	add	r7, sp, #0
@@ -1892,7 +1888,11 @@ void mode2() {
  8000e14:	20000044 	.word	0x20000044
 
 08000e18 <mode3>:
-
+ * Hàm này mô tả mode 3 của hệ thống
+ * với mode 3, đèn xanh của cả 2 đèn giao thông sẽ nhấp nháy với tần số 2 Hz
+ * Khi button2 được nhấn sẽ tăng biến tạm green_timer_mode lên 1
+ * khi button3 được nhấn sẽ gán giá trị từ biến tạm green_timer_mode vào biến green_timer
+ */
 void mode3() {
  8000e18:	b580      	push	{r7, lr}
  8000e1a:	af00      	add	r7, sp, #0
@@ -1991,7 +1991,11 @@ void mode3() {
  8000ed4:	2000004c 	.word	0x2000004c
 
 08000ed8 <mode4>:
-
+ * Hàm này mô tả mode 4 của hệ thống
+ * với mode 2, đèn vàng của cả 2 đèn giao thông sẽ nhấp nháy với tần số 2 Hz
+ * Khi button2 được nhấn sẽ tăng biến tạm red_timer_mode lên 1
+ * khi button3 được nhấn sẽ gán giá trị từ biến tạm red_timer_mode vào biến red_timer
+ */
 void mode4() {
  8000ed8:	b580      	push	{r7, lr}
  8000eda:	af00      	add	r7, sp, #0
@@ -2090,7 +2094,11 @@ void mode4() {
  8000f94:	20000048 	.word	0x20000048
 
 08000f98 <fsmButton>:
-
+ * Hàm này mô tả máy trạng thái mỗi khi button1 được nhấn
+ * ở case1, 2, 3, 4 tương ứng mode 1, 2, 3, 4 của các trạng thái
+ * khi chuyển qua case1, cần cho 2 biến led_status_1 và led_status_2 bằng 0 để bắt đầu mode1
+ * khi chuyển qua case2, 3, 4 thì cần gán giá trị cho led7buffer[] để led 7 đoạn hiển thị
+ */
 void fsmButton() {
  8000f98:	b580      	push	{r7, lr}
  8000f9a:	af00      	add	r7, sp, #0
